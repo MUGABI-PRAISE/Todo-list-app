@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todo/style.css' %}"> <!-- Link to CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ task }}</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Details</h1>
+        </header>
+
+        <main>
+            <section class="task-details">
+                <h2>{{ task }}</h2>
+
+                <div class="task-actions">
+                    <a href="{% url 'todo:updatetask' task.id %}" class="btn">Update Task</a>
+                    
+                    {% if task.completed %}
+                        <a href="{% url 'todo:complete' task.id %}" class="btn btn-secondary">Mark as Incomplete</a>
+                    {% else %}
+                        <a href="{% url 'todo:complete' task.id %}" class="btn btn-success">Mark as Complete</a>
+                    {% endif %}
+                    
+                    <a href="{% url 'todo:delete' task.id %}" class="btn btn-danger">Delete Task</a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

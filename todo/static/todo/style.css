@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+.logout{
+    text-decoration: none;
+    padding: 5px;
+    background-color: green;
+    text-align: right;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+header h3 {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+/* Add Task Button */
+.add-task {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Task Lists */
+.tasks {
+    margin-bottom: 30px;
+}
+
+.tasks h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list li {
+    background: #ecf0f1;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.task-list li:hover {
+    background: #bdc3c7;
+}
+
+.task-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.task-link.completed {
+    text-decoration: line-through;
+    color: #7f8c8d;
+}
+.task-details {
+    text-align: center;
+    background: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.task-details h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-secondary {
+    background-color: #f39c12;
+}
+
+.btn-secondary:hover {
+    background-color: #e67e22;
+}
+
+.btn-success {
+    background-color: #2ecc71;
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+.task-form {
+    text-align: center;
+    background: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.input-field {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.input-field:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+button.btn {
+    width: 100%;
+    font-size: 1.1rem;
+}
+.task-list li {
+    background: #ecf0f1;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    list-style: none;
+    cursor: pointer; /* Makes it clear the whole item is clickable */
+}
+
+.task-list li:hover {
+    background: #bdc3c7;
+}
+
+.task-link {
+    display: block;  /* Makes the entire <li> clickable */
+    width: 100%;  /* Ensures it fills the entire area */
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+}
+

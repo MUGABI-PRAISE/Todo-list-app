@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todo/signup_style.css' %}"> <!-- Link to your CSS file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+   
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-header">Welcome! Manage your notes efficiently</div>
+
+        {% if form.errors %}
+        <div class="error-message">
+            Please fix the errors below and try again.
+        </div>
+        {% endif %}
+
+        <form action="" method="post" autocomplete="off">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="submit-btn" type="submit">Next</button>
+        </form>
+
+        <!-- Social Login Section -->
+        <div class="social-login">
+            <p>or</p>
+
+            <a href="{% url 'social:begin' 'google-oauth2' %}">
+                <button class="google-btn" onclick="window.location.href='#'">
+                    <img src="{%static 'todo/images/google.png'%}" alt="Google">
+                    continue with Google
+                </button>
+            </a>
+
+            <button class="facebook-btn" onclick="window.location.href='#'">
+                <img src="{% static 'todo/images/facebook.png'%}" alt="Facebook">
+                Sign up with Facebook
+            </button>
+            <button class="apple-btn" onclick="window.location.href='#'">
+                <img src="{% static 'todo/images/apple.png'%}" alt="Apple">
+                Sign up with Apple
+            </button>
+        </div>
+
+        <div class="extra-links">
+            <p>Already have an account? <a href="{% url 'todo:log_in' %}">Log in here.</a></p>
+        </div>
+    </div>
+</body>
+</html>

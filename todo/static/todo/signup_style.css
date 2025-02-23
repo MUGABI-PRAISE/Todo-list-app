@@ -1,0 +1,97 @@
+
+/* General Page Styling */
+body {
+    /* background-color: #121212; Dark background like Spotify */
+    color: black;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Floating Form */
+.signup-container {
+    width: 350px;
+    margin: 100px auto 50px auto; /* Centers it and gives top spacing */
+}
+
+/* Header */
+.signup-header {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+.signup-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Makes input fields rounded */
+    /* background-color: #222; */
+    color: black;
+}
+
+/* Submit Button */
+.signup-container button {
+    width: 107%;
+    padding: 15px;
+    background-color: #1ed760; /* Spotify green */
+    color: black;
+    border: none;
+    border-radius: 25px; /* Rounded button */
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signup-container .submit-btn:hover {
+    background-color: #1db954;
+}
+
+/* Social Login Buttons */
+.social-login {
+    margin-top: 20px;
+}
+
+.social-login button {
+    width: 107%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 1px solid rgb(125, 107, 107);
+    border-radius: 25px; /* More curved buttons */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.social-login button img {
+    width: 20px;
+    height: 20px;
+}
+
+.social-login button:hover {
+    border: 1px solid black;
+}
+
+/* Extra Links */
+.extra-links {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.extra-links a {
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
+
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+}

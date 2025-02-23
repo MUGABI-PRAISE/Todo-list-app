@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todo/login_style.css' %}"> <!-- Link to CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">Login</div>
+
+        <!-- Welcome message -->
+        <p class="welcome-message">Welcome!</p>
+        <p class="sub-message">Manage your daily tasks efficiently!!</p>
+
+        <!-- Error message -->
+        {% if error_message %}
+        <div class="error-message">
+            {{ error_message }}
+        </div>
+        {% endif %}
+
+        <!-- Login form -->
+        <form action="" method="post" autocomplete="off">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Signup link -->
+         <p class="forgotpassword-link"><a href="{%url 'todo:password_reset'%}">Forgot password?</a></p>
+        <p class="signup-link">Don't have an account? <a href="{% url 'todo:signup' %}">Sign up</a></p>
+    </div>
+</body>
+</html>

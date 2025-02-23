@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        /* Container */
+        .signup-container {
+            width: 350px;
+            margin: 100px auto;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Header */
+        .signup-header {
+            background-color: #2c6b80;
+            color: #ffd700;
+            font-size: 20px;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        /* Error message */
+        .error-message {
+            background-color: #fff3f3;
+            color: #d9534f;
+            border: 1px solid #d9534f;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Input fields */
+        .signup-container input {
+            width: 95%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        /* Button */
+        .signup-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #337ab7;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .signup-container button:hover {
+            background-color: #286090;
+        }
+
+        /* Social Login Buttons */
+        .social-login {
+            margin-top: 15px;
+        }
+
+        .social-login button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .social-login .google-btn {
+            background-color: #db4437;
+            color: white;
+        }
+
+        .social-login .google-btn:hover {
+            background-color: #c1351d;
+        }
+
+        .social-login .github-btn {
+            background-color: #24292e;
+            color: white;
+        }
+
+        .social-login .github-btn:hover {
+            background-color: #181b1f;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-header">Sign Up</div>
+
+        {% if form.errors %}
+        <div class="error-message">
+            Please fix the errors below and try again.
+        </div>
+        {% endif %}
+
+        <form action="" method="post" autocomplete="off">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <!-- Social Login Section -->
+        <div class="social-login">
+            <p>Or sign up with:</p>
+            <button class="google-btn" onclick="window.location.href='#'">
+                Sign up with Google
+            </button>
+            <button class="github-btn" onclick="window.location.href='#'">
+                Sign up with GitHub
+            </button>
+        </div>
+    </div>
+</body>
+</html>

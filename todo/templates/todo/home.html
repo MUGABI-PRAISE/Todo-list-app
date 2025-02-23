@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'todo/style.css'%}"> <!-- Link to your CSS file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="container">
+        <div class="logout">
+            <a href="{%url 'todo:logout'%}">sign out</a>
+        </div>
+
+        <header>
+            <h1>Welcome!</h1>
+            <h3>View, create, delete, and update tasks as you see fit</h3>
+        </header>
+
+        <div class="add-task">
+            <a href="{% url 'todo:addtask' %}" class="btn">Add Task</a>
+        </div>
+
+        <main>
+            <section class="tasks">
+                <h3>Tasks at Hand</h3>
+                <ol class="task-list">
+                    {% for task in incomplete_tasks %}
+                        <li>
+                            <a href="{% url 'todo:task' task.id %}" class="task-link">{{ task.description }}</a>
+                        </li>
+                    {% endfor %}
+                </ol>
+            </section>
+
+            <section class="tasks">
+                <h3>Completed Tasks</h3>
+                <ol class="task-list">
+                    {% for task in completed_tasks %}
+                        <li>
+                            <a href="{% url 'todo:task' task.id %}" class="task-link completed">{{ task.description }}</a>
+                        </li>
+                    {% endfor %}
+                </ol>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

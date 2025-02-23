@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todo/style.css' %}"> <!-- Link to CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Add a New Task</h1>
+        </header>
+            <!--
+        There is something i need you to note here.
+        this form is able to send data to the server eventhough i did not specify the action attribute.
+        This is because by default, when you don't specify the action attribute, the form will send the data to the same url that the form is currently on.
+        this means that the view that rendered the form, ie addtask, will be the same to handle the form data when submitted.
+        however, if you want to send the data to another view, you can specify the action attribute to the url of the view you want to send the data to.
+    -->
+        <main>
+            <section class="task-form">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    
+                    <input type="text" name="description" id="description" class="input-field" placeholder="Enter task description" required>
+                    
+                    <button type="submit" class="btn">Add Task</button>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

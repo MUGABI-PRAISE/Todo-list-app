@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todo/style.css' %}"> <!-- Link to CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Task</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Update Task</h1>
+        </header>
+
+        <main>
+            <section class="task-form">
+                <h2>{{ task }}</h2>
+
+                <form action="" method="post">
+                    {% csrf_token %}
+                    
+                    <input type="text" name="description" id="description" class="input-field" placeholder="Update your task" value="{{task.description}}" required>
+                    
+                    <button type="submit" class="btn">Update Task</button>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
