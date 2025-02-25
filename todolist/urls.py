@@ -22,4 +22,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('todo/', include('todo.urls', namespace='todo')),
     path('auth/', include('social_django.urls', namespace='social')),  # Social auth URLs
-]
+]    
