@@ -85,8 +85,8 @@ def home(request):
     # if not request.user.is_authenticated:
     #     return redirect('todo:log_in')
     
-    completed_tasks = Task.objects.filter(completed=True).order_by('-updated_at')
-    incomplete_tasks = Task.objects.filter(completed=False).order_by('-updated_at')
+    completed_tasks = Task.objects.filter(completed=True, user=request.user).order_by('-updated_at')
+    incomplete_tasks = Task.objects.filter(completed=False, user=request.user).order_by('-updated_at')
     return render(request, 'todo/home.html', context={'completed_tasks': completed_tasks, 'incomplete_tasks': incomplete_tasks})
     
 
@@ -96,7 +96,7 @@ def home(request):
 def addtask(request):
     if request.method == 'POST':
         description = request.POST['description']
-        Task.objects.create(description=description)
+        Task.objects.create(description=description, user=request.user)
         return redirect('todo:home')
     else:
         return render(request, 'todo/addtask.html')
