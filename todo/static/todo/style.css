@@ -8,11 +8,11 @@ body {
     line-height: 1.6;
 }
 .logout{
-    text-decoration: none;
+    /* text-decoration: none; 
     padding: 5px;
-    background-color: green;
-    text-align: right;
-}
+    background-color: green; */
+     text-align: right; 
+} 
 
 .container {
     max-width: 800px;
