@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
+# these views are very good. ( this line is only for testing git pourposes``)
 
 ########################################
 # default login page
