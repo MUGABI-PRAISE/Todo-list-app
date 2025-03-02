@@ -35,10 +35,12 @@
                 </button>
             </a>
 
-            <button class="facebook-btn" onclick="window.location.href='#'">
-                <img src="{% static 'todo/images/facebook.png'%}" alt="Facebook">
-                Sign up with Facebook
-            </button>
+            <a href="{% url 'social:begin' 'facebook' %}">
+                <button class="facebook-btn" onclick="window.location.href='#'">
+                    <img src="{% static 'todo/images/facebook.png'%}" alt="Facebook">
+                    Sign up with Facebook
+                </button>
+            </a>
             <button class="apple-btn" onclick="window.location.href='#'">
                 <img src="{% static 'todo/images/apple.png'%}" alt="Apple">
                 Sign up with Apple
