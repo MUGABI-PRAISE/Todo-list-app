@@ -5,6 +5,7 @@ from django.contrib.auth import views as auth_views
 
 app_name = 'todo' 
 urlpatterns = [
+    #these are urls
     path('', views.index, name='index'),
     path('signup/', views.signup, name='signup'),
     path('home', views.home, name='home'),
