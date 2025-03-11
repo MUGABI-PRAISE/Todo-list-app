@@ -18,9 +18,11 @@
             <h3>View, create, delete, and update tasks as you see fit</h3>
         </header>
 
-        <div class="add-task">
-            <a href="{% url 'todo:addtask' %}" class="btn">Add Task</a>
-        </div>
+        {% if perms.todo.add_task %}
+            <div class="add-task">
+                <a href="{% url 'todo:addtask' %}" class="btn">Add Task</a>
+            </div>
+        {% endif %}
 
         <main>
             <section class="tasks">

@@ -3,7 +3,7 @@ from .models import Task
 from .forms import LoginForm, SignupForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 
 # these views are very good. ( this line is only for testing git pourposes``)
 # another line for testing git
@@ -95,7 +95,8 @@ def home(request):
 #######################################
 # add a new task
 #######################################
-def addtask(request):
+@permission_required('todo.add_task')
+def addtask(request):   
     if request.method == 'POST':
         description = request.POST['description']
         Task.objects.create(description=description, user=request.user)
